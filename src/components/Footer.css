@@ -73,6 +73,9 @@
   border: none;
   background-color: transparent;
 }
+.search-container button[type="submit"]:hover{
+  color: rgb(27, 14, 74);
+}
 
 .search-container .search-icon {
   color: #fff;

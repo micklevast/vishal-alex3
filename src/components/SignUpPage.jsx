@@ -1,11 +1,12 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import pics from '../Assets/Profile/profile-pic.png'
 
 const SignUpPage = ({ onSignUp }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [avatarUrl, setAvatarUrl] = useState("");
+  const [avatarUrl, setAvatarUrl] = useState(pics);
   const fileInputRef = useRef(null);
 
   const handleAvatarClick = () => {
@@ -42,7 +43,9 @@ const SignUpPage = ({ onSignUp }) => {
               overflow: "hidden",
               cursor: "pointer",
               margin: "auto",
+              
             }}
+            
             onClick={handleAvatarClick}
           >
             {avatarUrl ? (

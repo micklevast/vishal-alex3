@@ -9,7 +9,7 @@ const Footer = (props) => {
   return (
     <div className="footer">
       <div className="logo">
-        <img src={logo} alt="Logo" style={{'height':'15px','width':'90px'}} />
+        <img src={logo} alt="Logo" style={{'height':'25px','width':'190px'}} />
       </div>
       <div className="icons">
         <a href="https://www.instagram.com">
@@ -29,14 +29,14 @@ const Footer = (props) => {
         </a>
       </div>
       <div className="nav">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <a style={{'fontSize':'13px'}} href="/">Home</a>
+        <a style={{'fontSize':'13px'}} href="/about">About</a>
+        <a style={{'fontSize':'13px'}} href="/contact">Contact</a>
       </div>
       <div className="search-bar" >
         <form>
           <div className="search-container">
-            <input type="text" placeholder="Search"   style={{'height':'30px'}}/>
+            <input type="text" placeholder="Search"   style={{'height':'30px',marginLeft:'190px'}}/>
             {/* <input
               type="text"
               value={searchTerm}
@@ -44,13 +44,13 @@ const Footer = (props) => {
               placeholder="Search for movies..."
             /> */}
             <button type="submit">
-              <i className="fas fa-search search-icon"></i>
+              <i style={{marginLeft:'-790px' ,color:'black'}} className="fas fa-search search-icon"></i>
             </button>
           </div>
         </form>
       </div>
       <div className="copyright">
-        <p>All rights reserved. &copy; 2023.</p>
+        <p>&copy; 2023 All Rights Reserved | Terms Of Service | Privacy Policy</p>
       </div>
       <div className="owner">
         <p>Alex Ramirez</p>

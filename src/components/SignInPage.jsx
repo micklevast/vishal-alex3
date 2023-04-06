@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import pics from '../Assets/Profile/profile-pic.png'
 
 const SignInPage=({ onSignIn })=> {
     const Navigate=useNavigate();
     const [username, setUsername] = useState("");
+
+    const [avatarUrl, setAvatarUrl] = useState(pics);
     const [password, setPassword] = useState("");
-    const [avatarUrl, setAvatarUrl] = useState("");
+
   
     const handleSubmit = (event) => {
       event.preventDefault();
@@ -19,7 +22,27 @@ const SignInPage=({ onSignIn })=> {
     return (
       <div className="d-flex justify-content-center mt-5">
         <Form onSubmit={handleSubmit}>
-          <h1 className="text-center mb-4" style={{color:'white',height: '43px'}} >Sign in</h1>
+        <Form.Group controlId="avatarUrl">
+        <h1 className="text-center mb-4" style={{color:'white',height: '43px'}} >Profile</h1>
+          <div
+            style={{
+              width: "100px",
+              height: "100px",
+              borderRadius: "50%",
+              overflow: "hidden",
+              cursor: "pointer",
+              margin: "auto",
+              
+            }}
+          >
+               <img
+                src={avatarUrl}
+                alt="Avatar"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+        </div>
+        </Form.Group>
+          
 
           <Form.Group controlId="username">
             <Form.Label style={{color:'white'}}>Username</Form.Label>
@@ -41,7 +64,7 @@ const SignInPage=({ onSignIn })=> {
               onChange={(event) => setPassword(event.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" type="submit" className="mt-3">
+          <Button variant="primary" type="submit" className="mt-3" >
             Sign in
           </Button>
           <p className="mt-3" style={{color:'white',height: '43px'}}>
