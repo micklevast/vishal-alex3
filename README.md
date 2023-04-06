@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### Git Clone
+### Git Clone :https://github.com/micklevast/vishal-alex3.git
 
 ### npm install
 
