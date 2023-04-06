@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 
@@ -6,6 +6,11 @@ const SignUpPage = ({ onSignUp }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [avatarUrl, setAvatarUrl] = useState("");
+  const fileInputRef = useRef(null);
+
+  const handleAvatarClick = () => {
+    fileInputRef.current.click();
+  };
 
   const handleAvatarChange = (event) => {
     const file = event.target.files[0];
@@ -29,20 +34,46 @@ const SignUpPage = ({ onSignUp }) => {
         </h1>
         <Form.Group controlId="avatarUrl">
           <Form.Label style={{ color: "white" }}>Avatar</Form.Label>
-          <div>
-            {avatarUrl && (
+          <div
+            style={{
+              width: "100px",
+              height: "100px",
+              borderRadius: "50%",
+              overflow: "hidden",
+              cursor: "pointer",
+              margin: "auto",
+            }}
+            onClick={handleAvatarClick}
+          >
+            {avatarUrl ? (
               <img
                 src={avatarUrl}
                 alt="Avatar"
-                style={{ width: "100px", height: "100px", objectFit: "cover" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
+            ) : (
+              <div
+                style={{
+                  backgroundColor: "gray",
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  fontSize: "24px",
+                  color: "white",
+                }}
+              >
+                +
+              </div>
             )}
           </div>
           <input
             type="file"
             accept="image/*"
             onChange={handleAvatarChange}
-            style={{ color: "white" }}
+            style={{ display: "none" }}
+            ref={fileInputRef}
           />
         </Form.Group>
         <Form.Group controlId="username">

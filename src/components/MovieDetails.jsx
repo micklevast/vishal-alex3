@@ -61,7 +61,7 @@ const MovieDetails = () => {
                     </div>
 
                     <div className="movie-overlay ">
-                      <h1>{movie.Title}</h1>
+                      <h3>{movie.Title}</h3>
                     </div>
                   </div>
                   <div
@@ -69,8 +69,8 @@ const MovieDetails = () => {
                     style={{ margin: '0px', padding: '0px', display: 'flex', flexdirection: 'row' }}
                   >
                   <span class="rating-containers" style={{ display: 'flex', flexdirection: 'row'}}>
-                    <h5 class="rating-label">Rate this Movie &nbsp;</h5>
-                    <div class="" dangerouslySetInnerHTML={{ __html: getRatingStars(movie.imdbRating) }}></div>
+                    <h5 style={{position: 'absolute',left: '19px',}} class="rating-label">Rate this Movie &nbsp;</h5>
+                    <div style={{position: 'absolute',right: '120px',}} class="" dangerouslySetInnerHTML={{ __html: getRatingStars(movie.imdbRating) }}></div>
                   </span>
 
                   </div>

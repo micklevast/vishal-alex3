@@ -18,7 +18,7 @@ const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [isLogin,setIsLogin]=useState(false)
+  // const [isLogin,setIsLogin]=useState(false)
   const [movies, setMovies] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(
@@ -43,7 +43,6 @@ const App = () => {
 
   const getMovieRequest = async (searchTerm) => {
     const url = `http://www.omdbapi.com/?s=${searchTerm}&apikey=263d22d8`;
-    console.log('urllllllLLLLLLLLLLL:',url)
 
     const response = await fetch(url);
     const responseJson = await response.json();

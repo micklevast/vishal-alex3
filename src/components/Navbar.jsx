@@ -68,7 +68,7 @@ const Navbar = (props) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{ marginRight: "50px",'color':'white' }}>
 
               <li className="nav-item px-4" style={{color:'white' }}>
-                <Link to="/all" className="nav-link active" aria-current="page">
+                <Link to="/all" className="nav-link " aria-current="page">
 
                   Home
                 </Link>
